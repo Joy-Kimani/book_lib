@@ -1,0 +1,31 @@
+###
+GET http://localhost:3000
+
+### book
+GET http://localhost:3000/api/books
+
+### book id
+GET http://localhost:3000/api/books/1
+
+###
+PUT http://localhost:3000/api/books/1
+
+###
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+  "author": "malcom gladwell",
+  "title": "some book written by him",
+  "yop": "2089",
+  "genre": "fantasy" 
+}
+
+###
+PUT http://localhost:3000/api/books/1
+
+###
+DELETE http://localhost:3000/api/books/1
+
+###
+GET http://localhost:3000/json
