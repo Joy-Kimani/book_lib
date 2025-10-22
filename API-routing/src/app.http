@@ -1,0 +1,35 @@
+# Base URL
+@rootUrl = http://localhost:3000
+
+### root endpoint
+GET {{rootUrl}}/
+
+### get all books
+GET {{rootUrl}}/api/books
+
+### Get book by ID
+GET {{rootUrl}}/api/books/1
+
+### Create a new book
+POST {{rootUrl}}/api/books
+Content-Type: application/json
+
+{
+  "author": "malcom gladwell",
+  "title": "some book written by him",
+  "yop": "2089",
+  "genre": "fantasy" 
+}
+
+### Update todo
+PUT {{rootUrl}}/api/books/1
+Content-Type: application/json
+
+{
+  "borrowed": true,
+  "returned": false,
+  "message":"book has already been borrowed"
+}
+
+### Delete todo
+DELETE {{rootUrl}}/api/books/1
