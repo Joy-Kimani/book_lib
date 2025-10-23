@@ -21,7 +21,7 @@ bookRoutes.get('/books', (c) => {
 
 // get book by id
 bookRoutes.get('/books/:id', (c: Context) => {
-    const id = parseInt(c.req.param('id'))
+    const id = Number(c.req.param('id'))
     const book = books.find(b => b.book_id === id)
     if (!book) {
         return c.json({ error: 'Book not found' }, 404)
