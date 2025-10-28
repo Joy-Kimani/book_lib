@@ -1,7 +1,9 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import connectDb from './database/db.js'
-import bookRoutes from './books/books.route.ts'
+import bookRoutes from './books/books.route.js'
+import userRoutes from './users/user.routes.js'
+import authRoutes from './auth/auth.routes.js'
 import { prometheus } from '@hono/prometheus'
 import { logger } from 'hono/logger'
 import { limiter } from './middleware/ratelimiting.js'
@@ -35,6 +37,13 @@ app.get('/api',(c)=>{
         create: '/api/books [POST]',
         update: '/api/book/:book_id [PUT]',
         delete: '/api/books/:book_id [DELETE]'
+      },
+       users: {
+        getAll: '/api/users [GET]',
+        getById: '/api/users/:user_id [GET]',
+        create: '/api/users [POST]',
+        update: '/api/users/:user_id [PUT]',
+        delete: '/api/users/:user_id [DELETE]'
       }
     }
   })
@@ -50,7 +59,8 @@ app.notFound((c) => {
 
 //mount routes
 app.route("/api", bookRoutes);
-
+app.route("/api", userRoutes);
+app.route("/api", authRoutes);
 
 // app.get('/books', async (c) => {
 //   try {

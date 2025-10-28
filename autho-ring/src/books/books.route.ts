@@ -1,5 +1,5 @@
 import {type Context, Hono} from 'hono'
-import { getAllBooks,getBookById,updateBook,deleteBook, createBooks} from './books.controller.js'
+import { getAllBooks,getBookById,updateBook,deleteBook, createBooks} from './books.controller.ts'
 
 const bookRoutes = new Hono()
 

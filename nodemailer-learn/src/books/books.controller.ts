@@ -1,5 +1,5 @@
 import {type Context, Hono} from 'hono'
-import * as bookService from './books.service.ts'
+import * as bookService from './books.service.js'
 
 
 // const books = [

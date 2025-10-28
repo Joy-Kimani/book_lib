@@ -1,0 +1,71 @@
+# Base URL
+@baseUrl = http://localhost:3000
+
+### Root endpoint
+GET {{baseUrl}}/
+
+//metrics endpoint
+###
+GET {{baseUrl}}/metrics
+
+###
+GET {{baseUrl}}/api
+
+//create a new user
+###
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "first_name": "hey",
+  "last_name": "hey",
+  "email": "user2@example.com",
+  "phone_number": "0712345678",
+  "password": "password"
+}
+
+### User Registration
+POST {{baseUrl}}/api/auth/register
+Content-Type: application/json
+
+{
+  "first_name": "mbu",
+  "last_name": "mbi",
+  "phone_number": "0712345678",
+  "email": "mbu@example.com",
+  "password": "password123"
+}
+
+### User Login
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "mbu@example.com",
+  "password": "password123"
+}
+
+### Get all users
+GET {{baseUrl}}/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJmaXJzdF9uYW1lIjoibWJ1IiwibGFzdF9uYW1lIjoibWJpIiwiZW1haWwiOiJtYnVAZXhhbXBsZS5jb20iLCJ1c2VyX3R5cGUiOiJtZW1iZXIiLCJpYXQiOjE3NjE2NTc5MTgsImV4cCI6MTc2MTY2ODcxOH0.yZIxMAVaiFh31UPLgMz1KqdeekOmr-55OdUWIFH-oA0
+
+
+### Get user by ID
+GET {{baseUrl}}/api/users/
+
+
+
+### Update user
+PUT {{baseUrl}}/api/users/14
+Content-Type: application/json
+
+{
+  "first_name": "updated",
+  "last_name": "User Updated",
+  "email": "mbu@example.com",
+  "phone_number": "0711111111"
+}
+
+### Delete user
+DELETE {{baseUrl}}/api/users/14
+

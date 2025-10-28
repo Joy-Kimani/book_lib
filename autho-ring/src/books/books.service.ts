@@ -1,5 +1,5 @@
-import { getDbConnectPool } from "../database/db.ts";
-import bookRoutes from "./books.route.ts";
+import { getDbConnectPool } from "../database/db.js";
+import bookRoutes from "./books.route.js";
 
 
 interface bookResponse{
